@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140792770-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140792770-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Neural Machine Translation and Sequence-to-Sequence Models &middot; Michael Zhang
+    </title>
+
+    
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/life_contributions.css">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-mz.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-mz.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-mz.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+</head>
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Updated</span><span> on&nbsp;</span><time datetime="2019-02-27 14:44:09 -0500 -0500">February 27, 2019</time>
+        
+
+    
+</div>
+		<h1 class="post-title">Neural Machine Translation and Sequence-to-Sequence Models</h1>
+<div class="post-line" style="padding-bottom: 16px"></div>
+
+
+		
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+		<div style="margin-bottom: 2em">
+			<i></i>
+			
+		</div>
+		
+	    
+
+		
+
+<p>What follows are personal notes and any possible insights to help me understand neural machine translation especially in the context of seq2seq models. All content credit goes to Graham Neubig and his tutorial <a href="https://arxiv.org/pdf/1703.01619.pdf">Neural Machine Translation and Sequence-to-sequence Models: A Tutorial</a> These were done as review for CS 287r.</p>
+
+<h2 id="n-gram-language-models">n-gram Language Models</h2>
+
+<p>The main issue with these is not being able to capture all possible sentence inputs? We can create a simple maximum likelihood estimator by calculating the probabilities for each word $e_t | e_{t-1}$, but this is only as strong as if we see these in previous training data examples. N-grams allow us to try to be a bit more flexible.</p>
+
+<!-- MORE TO COME HERE -->
+
+<h2 id="log-linear-language-models">Log-linear Language Models</h2>
+
+<p>We still want to calculate the probability of a word $e_t$ given context $e_{t-n+1}^{t-1}. However, we move towards more obviously-looking machine learning models by introducing <strong>features</strong>. We have some feature function $\phi(e_{t-n+1}^{t-1})$ that takes in context and outputs a real-valued <strong>feature vector</strong> $\bf x \in \mathbb{R}^N$, that describes the context with $N\$ different features.</p>
+
+<p>In addition to this, we want to use the features to predict probabilities over the output vocabulary $V$, for which we can calculate a score vector $\bf s \in \mathbb{R}^{|V|}$ that corresponds to the likelihood of each word. Looking at our model parameters $\theta$ a bit more explicitly now, we can sort them into those belonging to a <strong>bias vector</strong> $\bf b \in \mathbb{R}^|V|$ and a <strong>weight matrix</strong> $\bf W = \mathbb{R}^{|V| \times N}$. The bias vector tells us how likely a word is overall, and the weight matrix describes the relationship between feature values and scores. We accordingly end up with</p>
+
+<p>$$
+\bf s = W \bf x + \bf b
+$$</p>
+
+<p>We can then calculate the probabilities for which word to predict (remember our $\bf s$ vector size $= |V|$ = size of our vocab). The scores themselves are arbitrary values, but we just want to figure out in relation to any other word what the probability of our model picking that word should be. Doing this with a softmax activation function, we can then match these probabilities to our data using a <strong>negative log likelihood</strong> (NLL) loss function. We want to find parameters $\bf \theta $ such that the likelihood of our observed training data is maximized, which is the same as minimizing the negative log likelihood mathematically, but easier to calculate computationally.</p>
+
+<p>Some things we can do: adjust learning rate - learning rate decay to drop lr over time; early stopping - note when a model starts overfitting on training data nad stop training then.</p>
+
+<h2 id="neural-networks-and-feed-forward-language-models">Neural Networks and Feed-forward Language Models</h2>
+
+<p>Input embedding group representation?</p>
+
+<p>Neural networks have benefits of being able to learn non-linear representations of the input, which intuitively allow for the capacity to learn more meanings? Seems to be the case that we use embeddings which might learn multiple associations, then feed into standard network architecture.</p>
+
+
+		
+<div class="icons">
+  <a href="https://github.com/mzio" target="_blank" class='icon'>
+    <i class="fab fa-github icon"></i>
+  </a>
+  <a href="https://linkedin.com/in/michaelzhangxyz/" target="_blank" class='icon'>
+    <i class="fab fa-linkedin-in icon"></i>
+  </a>
+  <a href="mailto:michael_zhang@college.harvard.edu" class='icon'>
+    <i class="fas fa-envelope icon"></i>
+  </a>
+</div>
+
+
+
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2021-08-12 12:26:01.972365 -0700 PDT m=&#43;0.156673999">2021</time>. Michael Zhang. H' 2020. 
+			</span>
+			<div class="container" style="padding-top: 5px; height: 200px; width: 71%;"></div>
+			
+			<script src="/js/life_contributions.js"></script>
+			<script src="/js/life_contributions_commits.js"></script>
+			<script type="text/javascript">
+				var now = moment().endOf('day').toDate();
+				var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
+				var graph = lifeContributions()
+				.data(commits)
+				.selector('.container')
+				.tooltipEnabled(true)
+				.onClick(function (data) {
+					console.log('data', data);
+				});
+				graph();  
+			</script>
+		</footer>
+
+    </body>
+</html>

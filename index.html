@@ -1,1 +1,350 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+	<meta name="generator" content="Hugo 0.52" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140792770-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140792770-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>
+        Michael Zhang
+    </title>
+
+    
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/life_contributions.css">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-mz.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-mz.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-mz.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    
+    <link href="https://michaelzhang.xyz/index.xml" rel="alternate" type="application/rss+xml" title="Michael Zhang" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+</head>
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">Michael Zhang</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/">Home</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+  <div class="post">
+    <h2># Intro</h2>
+
+<img src="/images/headshot_circle2.png" id='headshot' />
+
+    <p>Welcome to my rendition of yet another vaguely academic personal site (that also sort of looks like the <a href="http://demo.getpoole.com/">rest</a> <a href="https://alshedivat.github.io/al-folio/">of</a> <a href="https://academicpages.github.io/">them</a>)!</p>
+
+<p>In all seriousness, I’m Michael:<br />
+- (Rising) 2nd-year Computer Science PhD student at Stanford, advised by <a href="https://cs.stanford.edu/~chrismre/">Chris Ré</a>.<br />
+- Previously / also spending wonderful time with: <a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a> (<em>rotation</em>), <a href="https://cs.stanford.edu/~pliang/">Percy Liang</a> (<em>rotation</em>), <a href="https://rsu.data61.csiro.au/people/jalvarez/">José M. Álvarez</a> (<em>NVIDIA</em>).</p>
+
+<p>I&rsquo;m broadly interested in making machine learning more usable &ldquo;in the real world&rdquo;, primarily w.r.t. robustness, personalization, and collaborative training. I also like learning with less labels.</p>
+
+<p>Before these covid times, I received my A.B. in Statistics and Computer Science at Harvard in 2020, where I&rsquo;m grateful to have worked with <a href="http://ai.stanford.edu/~syyeung/">Serena Yeung</a>, <a href="http://people.seas.harvard.edu/~samurphy/">Susan Murphy</a>, and <a href="https://www.alexdamour.com/">Alex D&rsquo;Amour</a> on computer vision and reinforcement learning with healthcare.</p>
+
+<!-- Right now I work with [Serena Yeung](http://ai.stanford.edu/~syyeung/) on computer vision and deep learning, and [Susan Murphy](http://people.seas.harvard.edu/~samurphy/) on reinforcement learning, both motivated by applications to healthcare. I've also done research in meta-learning and RL policy characterization with Serena and Susan at the [Statistical RL Lab](http://people.seas.harvard.edu/~samurphy/lab/overview.html), and [Alex D'Amour](https://www.alexdamour.com/) at [Google Brain](https://sites.google.com/view/harvardcs282r/home), and am fortunate to be academically co-advised by [David Parkes](http://www.eecs.harvard.edu/~parkes/) and [Joe Blitzstein](https://statistics.fas.harvard.edu/people/joseph-k-blitzstein).
+
+Previously I spent a summer wondering if RL could be applied to the markets at [DRW](https://drw.com/), and before that I built tools in computational healthcare in [Ken Mandl](http://www.childrenshospital.org/research/researchers/m/kenneth-mandl)'s group at [Boston Childrens' Hospital](https://www.chip.org/) and genome editing under [George Church](http://arep.med.harvard.edu/gmc/) at Harvard Medical School and the [Wyss Institute](https://wyss.harvard.edu/technologies/?taxonomy=focus_area&term=125). -->
+
+<!-- ### # Currently
+
+Learning - [Statistics](https://statistics.fas.harvard.edu/) + [Computer Science](https://www.seas.harvard.edu/computer-science) @Harvard
+Researching - Yeung Lab @Stanford, [Statistical RL Lab](http://people.seas.harvard.edu/~samurphy/lab/overview.html) @Harvard
+
+### # Previously
+
+Quant Research - [DRW](https://drw.com/)
+Genomics + ML - [Broad Institute](https://www.broadinstitute.org/)
+Healthcare SWE - [Boston Children's Hospital](https://www.chip.org/)
+CRISPR - [Church Lab](http://arep.med.harvard.edu/), HMS -->
+
+
+    <div class="catalogue" style="padding: 1rem 0rem;">
+      <h3 style="margin-bottom: 0"># Research</h3>
+      
+      <div class="catalogue-item-post">
+    <div>
+        
+        
+        <div style="margin-bottom: 1rem">
+            
+            <img class="catalogue-preview_img-paper" width="25%" height="135"
+                src="https://michaelzhang.xyz/images/021-cnc_icon1.png" />
+            
+            <h1 class="catalogue-title-post">Correct-N-Contrast: a Contrastive Approach for Improving Robustness to Spurious Correlations</h1>
+            </a>
+            <p style="text-align: initial; margin-bottom: 0; font-size: 0.95rem;">
+                
+                Michael Zhang, Nimit S. Sohoni, Hongyang R. Zhang, Chelsea Finn, Chris Ré
+                
+                <br />
+                <i>
+                    
+                    ICML UDL 2021 Workshop
+                    
+                </i>
+                <div style="margin-top: 0.5rem">
+                    <a href="http://www.gatsby.ucl.ac.uk/~balaji/udl2021/accepted-papers/UDL2021-paper-014.pdf" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">PDF</a>
+                      
+                </div>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+      
+      <div class="catalogue-item-post">
+    <div>
+        
+        
+        <div style="margin-bottom: 1rem">
+            
+            <img class="catalogue-preview_img-paper" width="25%" height="135"
+                src="https://michaelzhang.xyz/images/020-fedfomo_icon1.png" />
+            
+            <h1 class="catalogue-title-post">Personalized Federated Learning with First Order Model Optimization</h1>
+            </a>
+            <p style="text-align: initial; margin-bottom: 0; font-size: 0.95rem;">
+                
+                Michael Zhang, Karan Sapra, Sanja Fidler, Serena Yeung, José M. Álvarez
+                
+                <br />
+                <i>
+                    
+                    ICLR 2021
+                    
+                </i>
+                <div style="margin-top: 0.5rem">
+                    <a href="https://openreview.net/forum?id=ehJqJQk9cw" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">PDF</a>
+                      
+                </div>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+      
+      <div class="catalogue-item-post">
+    <div>
+        
+        
+        <div style="margin-bottom: 1rem">
+            
+            <img class="catalogue-preview_img-paper" width="25%" height="135"
+                src="https://michaelzhang.xyz/images/019-surgery_hands.png" />
+            
+            <h1 class="catalogue-title-post">Using Computer Vision to Automate Hand Detection and Tracking of Surgeon Movements in Videos of Open Surgery</h1>
+            </a>
+            <p style="text-align: initial; margin-bottom: 0; font-size: 0.95rem;">
+                
+                Michael Zhang, Xiaotian Cheng, Daniel Copeland, Arjun Desai, Melody Y. Guan, Gabriel A. Brat, Serena Yeung
+                
+                <br />
+                <i>
+                    
+                    AMIA 2020 Annual Symposium
+                    
+                </i>
+                <div style="margin-top: 0.5rem">
+                    <a href="https://arxiv.org/abs/2012.06948" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">PDF</a>
+                      
+                    <a href="https://github.com/mzio/surgery-hand-labels" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">Code</a>
+                    
+                </div>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+      
+      <div class="catalogue-item-post">
+    <div>
+        
+        
+        <div style="margin-bottom: 1rem">
+            
+            <img class="catalogue-preview_img-paper" width="25%" height="135"
+                src="https://michaelzhang.xyz/images/018-policy_divergence_pmrl.png" />
+            
+            <h1 class="catalogue-title-post">Characterizing Policy Divergence for Personalized Meta-Reinforcement Learning</h1>
+            </a>
+            <p style="text-align: initial; margin-bottom: 0; font-size: 0.95rem;">
+                
+                Michael Zhang
+                
+                <br />
+                <i>
+                    
+                    NeurIPS 2019 Workshops on Deep Reinforcement Learning and Meta-Learning
+                    
+                </i>
+                <div style="margin-top: 0.5rem">
+                    <a href="https://arxiv.org/abs/2010.04816" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">PDF</a>
+                      
+                    <a href="https://github.com/mzio/personalized-particle-env" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">Code</a>
+                    
+                </div>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+      
+      <div class="catalogue-item-post">
+    <div>
+        
+        
+        <div style="margin-bottom: 1rem">
+            
+            <img class="catalogue-preview_img-paper" width="25%" height="135"
+                src="https://michaelzhang.xyz/images/002-crispr_vlp-intro.png" />
+            
+            <h1 class="catalogue-title-post">Design and Assembly of CRISPR/Cas9-based Virus-like Particles for Programmable and Orthogonal Genetic Engineering in Mammalian Cells</h1>
+            </a>
+            <p style="text-align: initial; margin-bottom: 0; font-size: 0.95rem;">
+                
+                Michael Zhang
+                
+                <br />
+                <i>
+                    
+                    Intel Science Talent Search 2016 Finalist (2nd Place)
+                    
+                </i>
+                <div style="margin-top: 0.5rem">
+                    <a href="https://drive.google.com/file/d/0B-oHjrV9G4VBTmU4THVvMktWb2c/view?usp=sharing" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">PDF</a>
+                     
+                    <a href="https://michaelzhang.xyz/posts/002-crispr_vlps-post/" class="catalogue-btn" style="margin-right: 8px;"
+                        target="_blank">Post</a>
+                     
+                </div>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+      
+    </div>
+
+    
+<div class="icons">
+  <a href="https://github.com/mzio" target="_blank" class='icon'>
+    <i class="fab fa-github icon"></i>
+  </a>
+  <a href="https://linkedin.com/in/michaelzhangxyz/" target="_blank" class='icon'>
+    <i class="fab fa-linkedin-in icon"></i>
+  </a>
+  <a href="mailto:michael_zhang@college.harvard.edu" class='icon'>
+    <i class="fas fa-envelope icon"></i>
+  </a>
+</div>
+
+
+
+
+    
+  </div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2021-08-12 12:26:01.975958 -0700 PDT m=&#43;0.160267230">2021</time>. Michael Zhang. H' 2020. 
+			</span>
+			<div class="container" style="padding-top: 5px; height: 200px; width: 71%;"></div>
+			
+			<script src="/js/life_contributions.js"></script>
+			<script src="/js/life_contributions_commits.js"></script>
+			<script type="text/javascript">
+				var now = moment().endOf('day').toDate();
+				var yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
+				var graph = lifeContributions()
+				.data(commits)
+				.selector('.container')
+				.tooltipEnabled(true)
+				.onClick(function (data) {
+					console.log('data', data);
+				});
+				graph();  
+			</script>
+		</footer>
+
+    </body>
+</html>
